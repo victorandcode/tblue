@@ -78,3 +78,9 @@ typings/
 
 # DynamoDB Local files
 .dynamodb/
+
+###################################### CUSTOM
+.env
+
+dist/
+
