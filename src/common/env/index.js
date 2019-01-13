@@ -9,3 +9,8 @@ export const envKeys = {
 };
 
 export const getEnvValue = (key: string) => process.env[key];
+
+export default {
+    getTrelloApiKey: () => getEnvValue(envKeys.trelloApiKey),
+    getAppToken: () => getEnvValue(envKeys.appToken)
+};
