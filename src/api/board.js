@@ -1,16 +1,11 @@
 // @flow
 
-import axios from 'axios';
-import qs from 'qs';
-
-import { getEnvValue, envKeys } from '~/common/env';
+import { doPost } from './wrapper';
 
 const createUrl = (queryParams: string) => `https://api.trello.com/1/boards/${queryParams}`;
 
 export const create = (name: string): Promise<Object> => {
-    const key = getEnvValue(envKeys.trelloApiKey);
-    const token = getEnvValue(envKeys.appToken);
-    const queryParams = {
+    const baseParams = {
         name,
         defaultLabels: 'true',
         defaultLists: 'true',
@@ -23,10 +18,6 @@ export const create = (name: string): Promise<Object> => {
         prefs_cardCovers: 'true',
         prefs_background: 'blue',
         prefs_cardAging: 'regular',
-        key,
-        token,
     };
-    const queryParamsStr = qs.stringify(queryParams, { addQueryPrefix: true });
-    const url = createUrl(queryParamsStr)
-    return axios.post(url);
+    return doPost(baseParams, createUrl);
 };

@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getQueryParams converts params to string correctly 1`] = `"?name=John%20Francis%20213&surname=Doe&key=%3CTrelloApiKey%3E&token=%3CAppToken%3E"`;
