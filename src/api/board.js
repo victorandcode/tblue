@@ -4,7 +4,7 @@ import { doPost } from './wrapper';
 
 const createUrl = (queryParams: string) => `https://api.trello.com/1/boards/${queryParams}`;
 
-export const create = (name: string): Promise<Object> => {
+export const create = async (name: string): Promise<Object> => {
     const baseParams = {
         name,
         defaultLabels: 'true',
@@ -19,5 +19,6 @@ export const create = (name: string): Promise<Object> => {
         prefs_background: 'blue',
         prefs_cardAging: 'regular',
     };
-    return doPost(baseParams, createUrl);
+    const response = await doPost(baseParams, createUrl);
+    return response.data.id;
 };
