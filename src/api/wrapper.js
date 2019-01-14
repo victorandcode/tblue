@@ -24,3 +24,8 @@ export const doPost = (baseParams: Object, getUrl: (queryParams: string) => stri
     const queryParams = getQueryParams(baseParams);
     return axios.post(getUrl(queryParams));
 };
+
+export const doGet = (baseParams: Object, getUrl: (queryParams: string) => string) => {
+    const queryParams = getQueryParams(baseParams);
+    return axios.get(getUrl(queryParams));
+};
