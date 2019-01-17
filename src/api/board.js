@@ -17,7 +17,7 @@ export const create = async (name: string): Board => {
 
 const getListsUrl = (boardId: string, queryParams: string) => `https://trello.com/1/boards/${boardId}/lists${queryParams}`;
 
-export const getLists = async (boardId: string): Array<List> => {
+export const getLists = async (boardId: string): Promise<Array<List>> => {
     const getUrlFn = (queryParams: string) => getListsUrl(boardId, queryParams);
     const response = await doGet({}, getUrlFn);
     return response.data;
