@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`orchestrator begin returns correct cards 1`] = `
+Array [
+  Object {
+    "name": "Create dockerfile",
+  },
+  Object {
+    "name": "Add google analytics",
+  },
+  Array [
+    Object {
+      "description": "- Create repo in ",
+      "name": "Repository configuration",
+    },
+    Object {
+      "description": "",
+      "name": "Configure react router",
+    },
+    Object {
+      "name": "Configure jest",
+    },
+    Object {
+      "name": "Configure babel root import",
+    },
+    Object {
+      "name": "Add pre push hooks",
+    },
+    Object {
+      "description": "",
+      "name": "Define folder structure",
+    },
+    Object {
+      "description": "",
+      "name": "Configure dev environment",
+    },
+    Object {
+      "description": "",
+      "name": "Configure CI",
+    },
+  ],
+]
+`;

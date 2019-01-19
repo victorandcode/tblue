@@ -1,5 +1,4 @@
 // @flow
-
 import { doGet, doPost } from './wrapper';
 import type { Board, List } from './types';
 
