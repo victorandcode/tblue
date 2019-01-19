@@ -4,7 +4,7 @@
   "description": "Tman, like yeoman but for trello",
   "main": "src/index.js",
   "scripts": {
-    "start": "npm run build && node dist/index.js",
+    "start": "babel-node src/index.js",
     "test": "npm run test:typing && npm run test:unit",
     "build": "npm run prettier && babel src/ -d dist/",
     "test:unit": "jest src",
@@ -20,6 +20,7 @@
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
+    "@babel/node": "^7.2.2",
     "@babel/plugin-transform-runtime": "^7.2.0",
     "@babel/preset-env": "^7.2.3",
     "@babel/preset-flow": "^7.0.0",
