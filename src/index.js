@@ -4,9 +4,10 @@ import inquirer from "inquirer";
 import { begin } from "~/orchestrator";
 import logger from "~/common/logger";
 
-function main() {
+async function main() {
   try {
-    begin();
+    const cards = await begin();
+    console.log("cards: ", cards);
   } catch (error) {
     logger.fail(`ERROR is: ${error}`);
   }
