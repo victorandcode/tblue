@@ -1,13 +1,10 @@
 // @flow
-import inquirer from "inquirer";
-
-import { begin } from "~/orchestrator";
 import logger from "~/common/logger";
+import { begin } from "~/orchestrator";
 
 async function main() {
   try {
-    const cards = await begin();
-    console.log("cards: ", cards);
+    begin();
   } catch (error) {
     logger.fail(`ERROR is: ${error}`);
   }
