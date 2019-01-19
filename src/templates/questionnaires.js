@@ -1,31 +1,20 @@
 // @flow
-
 import fs from 'fs';
+import type { Questionnaire } from './types';
 
 const questionnairesPath = `${__dirname}/../../templates/`;
 
-export type Card = {
-    name: string,
-    description?: string,
-};
-
-export type Question = {
-    content: string,
-    cardToGenerate: Card,
-};
-
-export type Questionnaire = {
-    questions: Array<Question>,
-    cards: Array<Card>
-};
-
 const fileToJson = (fileName: string): Object => {
     const filePath = `${questionnairesPath}${fileName}`;
-    const contents = fs.readFileSync(filePath, { encoding: 'utf-8' });
-    return JSON.parse(contents);
+    const contentsRaw = fs.readFileSync(filePath, { encoding: 'utf-8' });
+    const contentsParsed = JSON.parse(contentsRaw);
+    return {
+        name: fileName,
+        ...contentsParsed
+    };
 };
 
-export const loadQuestionaires = (): Array<Questionnaire> => {
+export const loadQuestionnaires = (): Array<Questionnaire> => {
     const files = fs.readdirSync(questionnairesPath);
     return files.map(fileToJson);
 };
