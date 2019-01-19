@@ -17,10 +17,10 @@ export const solicitUserStories = async (): Promise<Array<Card>> => {
             message: `Please enter the user story ${counter} description`,
         }]);
         const userStorySummary = answers[questionName];
-        result.push({ name: userStorySummary });
         if(isAnswerToStop(userStorySummary)) {
             break;
         }
+        result.push({ name: userStorySummary });
         counter++;
     }
     return result;
