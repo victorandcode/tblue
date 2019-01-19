@@ -8,6 +8,7 @@ const info = (str: string) => console.log(colors.yellow(str));
 const fail = (str: string) => console.log(colors.red(str));
 
 export default {
-    success,
     fail,
+    info,
+    success,
 };
