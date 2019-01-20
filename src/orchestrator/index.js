@@ -3,10 +3,10 @@ import opn from 'opn';
 import inquirer from 'inquirer';
 
 import logger from '~/common/logger';
-
 import type { Card } from '~/templates/types';
 import { create as createBoard, getLists } from '~/api/board';
 import { create as createCard } from '~/api/card';
+import type { Board } from '~/api/types';
 
 import { solicitBoardName } from './board';
 import { solicitQuestionnaire } from './questionnaire';
@@ -41,7 +41,7 @@ const registerData = async (boardName: string, cards: Array<Card>) => {
     return board;
 };
 
-export const solicitOpenBoardUrl = async (board) => {
+export const solicitOpenBoardUrl = async (board: Board) => {
     const questionName = 'openBoardUrl';
     const answer = await inquirer
         .prompt([{
