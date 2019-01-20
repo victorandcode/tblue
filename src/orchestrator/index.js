@@ -13,9 +13,12 @@ import { solicitQuestionnaire } from './questionnaire';
 import { askQuestions } from './questions';
 import { solicitUserStories } from './userStories';
 
+export const padding = () =>  logger.warning('');
+
 const getCards = async () => {
     const questionnaire = await solicitQuestionnaire();
     const questionGeneratedCards = await askQuestions(questionnaire);
+    padding();
     const userStoryCards = await solicitUserStories();
     return [
         ...questionGeneratedCards,
@@ -32,7 +35,7 @@ const registerData = async (boardName: string, cards: Array<Card>) => {
     for(let i = 0; i < cards.length; i++) {
         const card = cards[i];
         await createCard(card.name, listId);
-        logger.info(`Created ${i+1}/${cards.length} cards`)
+        logger.warning(`Created ${i+1}/${cards.length} cards`)
     }
     logger.success('All cards created!');
     return board;
@@ -53,7 +56,10 @@ export const solicitOpenBoardUrl = async (board) => {
 
 export const begin = async () => {
     const boardName = await solicitBoardName();
+    padding();
     const cards = await getCards();
+    padding();
     const board = await registerData(boardName, cards);
+    padding();
     await solicitOpenBoardUrl(board);
 };
