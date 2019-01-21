@@ -1,6 +1,6 @@
 import inquirer from 'inquirer';
 
-import type { Card, Question, Questionnaire } from '~/templates/types';
+import type { Card, Questionnaire } from '~/templates/types';
 
 export const askQuestions = async (questionnaire: Questionnaire): Array<Card> => {
     const questions = questionnaire.questions;
@@ -8,7 +8,7 @@ export const askQuestions = async (questionnaire: Questionnaire): Array<Card> =>
         question => ({
             type: 'confirm',
             name: question.content,
-            message: question.content
+            message: question.content,
         })
     );
     const answers = await inquirer.prompt(promptQuestions);
