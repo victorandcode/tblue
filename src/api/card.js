@@ -6,7 +6,7 @@ const createUrl = (queryParams: string) => `https://api.trello.com/1/cards${quer
 export const create = async (name: string, idList: string): Promise<Object> => {
     const baseParams = {
         name,
-        idList
+        idList,
     };
     const response = await doPost(baseParams, createUrl);
     return response.data.id;

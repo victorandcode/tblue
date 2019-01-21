@@ -20,5 +20,5 @@ export const validateEnvironment = () => {
 
 export default {
     getTrelloApiKey: () => getEnvValue(envKeys.trelloApiKey),
-    getAppToken: () => getEnvValue(envKeys.appToken)
+    getAppToken: () => getEnvValue(envKeys.appToken),
 };

@@ -8,8 +8,8 @@ jest.mock('../../common/env', () => ({
 describe('getQueryParams', () => {
     it('converts params to string correctly', () => {
         const baseOptions = {
-            name: "John Francis 213",
-            surname: "Doe",
+            name: 'John Francis 213',
+            surname: 'Doe',
         };
         expect(getQueryParams(baseOptions)).toMatchSnapshot();
     });

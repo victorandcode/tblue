@@ -10,7 +10,7 @@ const fileToJson = (fileName: string): Object => {
     const contentsParsed = JSON.parse(contentsRaw);
     return {
         name: fileName,
-        ...contentsParsed
+        ...contentsParsed,
     };
 };
 
