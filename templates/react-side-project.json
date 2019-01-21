@@ -21,15 +21,16 @@
     ],
     "cards": [
         {
-            "name": "Repository configuration",
-            "description": "- Create repo in "
+            "name": "Repository configuration"
         },
         {
-            "name": "Configure react router",
-            "description": ""
+            "name": "Configure react router"
         },
         {
             "name": "Configure jest"
+        },
+        {
+            "name": "Configure eslint"
         },
         {
             "name": "Configure babel root import"
@@ -38,16 +39,13 @@
             "name": "Add pre push hooks"
         },
         {
-            "name": "Define folder structure",
-            "description": ""
+            "name": "Define folder structure"
         },
         {
-            "name": "Configure dev environment",
-            "description": ""
+            "name": "Configure dev environment"
         },
         {
-            "name": "Configure CI",
-            "description": ""
+            "name": "Configure CI"
         }
     ]
 }
