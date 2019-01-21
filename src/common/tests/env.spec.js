@@ -4,7 +4,7 @@ describe('validateEnvironment', () => {
     describe('when env key is missing', () => {
         it('throws an error', () => {
             process.env = {
-                [envKeys.trelloApiKey]: undefined
+                [envKeys.trelloApiKey]: undefined,
             };
             expect(() => {
                 validateEnvironment();
@@ -17,7 +17,7 @@ describe('validateEnvironment', () => {
                 .keys(envKeys)
                 .reduce((accumulator, currentValue) => ({
                     ...accumulator,
-                    [envKeys[currentValue]]: 'dummy value'
+                    [envKeys[currentValue]]: 'dummy value',
                 }), {});
             process.env = env;
             console.log('env: ', env);

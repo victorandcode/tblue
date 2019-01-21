@@ -44,4 +44,6 @@ export const begin = async () => {
     const board = await registerData(boardName, cards);
     padding();
     await solicitOpenBoardUrl(board);
+    padding();
+    logger.success('♥ Thanks for using tman');
 };
