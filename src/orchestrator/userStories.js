@@ -6,7 +6,7 @@ import type { Card } from '~/templates/types';
 
 export const questionName = 'userStorySummary';
 
-const isAnswerToStop = (userStorySummary: string) =>
+const isAnswerToStop = (userStorySummary: string): boolean =>
     userStorySummary === 'q' || userStorySummary === '';
 
 export const solicitUserStories = async (): Promise<Array<Card>> => {

@@ -13,9 +13,9 @@ import { solicitQuestionnaire } from './questionnaire';
 import { askQuestions } from './questions';
 import { solicitUserStories } from './userStories';
 
-export const padding = () =>  logger.warning('');
+export const padding = () => logger.warning('');
 
-const getCards = async () => {
+const getCards = async (): Promise<Array<Card>> => {
     const questionnaire = await solicitQuestionnaire();
     const questionGeneratedCards = await askQuestions(questionnaire);
     padding();
