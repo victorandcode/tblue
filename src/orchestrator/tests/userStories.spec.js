@@ -5,7 +5,7 @@ import { solicitUserStories } from '../userStories';
 
 describe('userStories', () => {
     describe('when user adds 1 story', () => {
-        it('generates corresponding card', async () => {
+        xit('generates corresponding card', async () => {
             inquirer.prompt.mockImplementation(() => Promise.resolve({
                 questionName: 'Search for products',
             }));
