@@ -1,0 +1,57 @@
+{
+    "questions": [
+        {
+            "content": "Will you be acquire a domain?",
+            "cardToGenerate": {
+                "name": "Acquire domain"
+            }
+        },
+        {
+            "content": "Will you acquire a hosting?",
+            "cardToGenerate": {
+                "name": "Acquire hosting"
+            }
+        }
+    ],
+    "cards": [
+        {
+            "name": "Configure time zone"
+        },
+        {
+            "name": "Configure .htaccess file"
+        },
+        {
+            "name": "Delete example content"
+        },
+        {
+            "name": "Create robots.txt file"
+        },
+        {
+            "name": "Add custom logo"
+        },
+        {
+            "name": "Add custom favicon"
+        },
+        {
+            "name": "Install Wordfence to prevent SQL injection attacks"
+        },
+        {
+            "name": "Install Login LockDown"
+        },
+        {
+            "name": "Configure periodical backups"
+        },
+        {
+            "name": "Create custom 404 page"
+        },
+        {
+            "name": "Add site map"
+        },
+        {
+            "name": "Add terms and conditions page"
+        },
+        {
+            "name": "Configure SEO"
+        }
+    ]
+}

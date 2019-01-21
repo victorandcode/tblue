@@ -1,0 +1,48 @@
+{
+    "questions": [
+        {
+            "content": "Will you be using Docker?",
+            "cardToGenerate": {
+                "name": "Create Docker configuration"
+            }
+        },
+        {
+            "content": "Will you create a database schema?",
+            "cardToGenerate": {
+                "name": "Create database schema"
+            }
+        },
+        {
+            "content": "Will you create a logging guideline?",
+            "cardToGenerate": {
+                "name": "Create logging guideline"
+            }
+        },
+        {
+            "content": "Will you use sonarqube?",
+            "cardToGenerate": {
+                "name": "Setup sonarqube"
+            }
+        }
+    ],
+    "cards": [
+        {
+            "name": "Repository configuration"
+        },
+        {
+            "name": "Setup logging"
+        },
+        {
+            "name": "Setup testing technologies"
+        },
+        {
+            "name": "Create database schema"
+        },
+        {
+            "name": "Setup API documentation"
+        },
+        {
+            "name": "Setup persistance layer"
+        }
+    ]
+}
