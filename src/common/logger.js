@@ -9,7 +9,6 @@ const instructions = (str: string) => base(colors.italic(str));
 const success = (str: string) => base(colors.green(str));
 const warning = (str: string) => base(colors.yellow(str));
 
-
 export default {
     base,
     fail,
