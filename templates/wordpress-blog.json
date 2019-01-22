@@ -1,7 +1,7 @@
 {
     "questions": [
         {
-            "content": "Will you be acquire a domain?",
+            "content": "Will you acquire a domain?",
             "cardToGenerate": {
                 "name": "Acquire domain"
             }
