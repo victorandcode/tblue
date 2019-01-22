@@ -13,7 +13,7 @@ export const solicitQuestionnaire = async (): Questionnaire => {
             name: questionName,
             message: 'What questionnaire would you like to use?',
             choices: questionnaires.map(q => q.name),
-            prefix: '📋'
+            prefix: '📋',
         }]);
     return questionnaires.find(q => q.name === answers[questionName]);
 };
