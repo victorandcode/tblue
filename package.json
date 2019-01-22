@@ -1,7 +1,7 @@
 {
   "name": "tman-trello-scaffolding",
   "version": "0.1.0",
-  "description": "Tman, like yeoman but for trello",
+  "description": "Scaffolding for trello (like yeoman but for trello)",
   "main": "src/index.js",
   "scripts": {
     "start": "babel-node src/index.js",
