@@ -24,7 +24,7 @@ const getCards = async (): Promise<Array<Card>> => {
 
 const registerData = async (boardName: string, cards: Array<Card>) => {
     const board = await createBoard(boardName);
-    logger.success('Board created!');
+    logger.success('✔️ Board created!');
     const boardLists = await getLists(board.id);
     const listId = boardLists[0].id;
     for(let i = 0; i < cards.length; i++) {
@@ -32,7 +32,7 @@ const registerData = async (boardName: string, cards: Array<Card>) => {
         await createCard(card.name, listId);
         logger.warning(`Created ${i+1}/${cards.length} cards`)
     }
-    logger.success('All cards created!');
+    logger.success('✔️ All cards created!');
     return board;
 };
 
@@ -45,5 +45,5 @@ export const begin = async () => {
     padding();
     await solicitOpenBoardUrl(board);
     padding();
-    logger.success('♥ Thanks for using tman');
+    logger.success('💜 Thanks for using tman');
 };
