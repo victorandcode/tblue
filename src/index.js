@@ -10,7 +10,7 @@ async function main() {
         validateEnvironment();
         await begin();
     } catch (error) {
-        logger.fail(`ERROR: ${error}`);
+        logger.fail(`${error.stack}`);
     }
 }
 
