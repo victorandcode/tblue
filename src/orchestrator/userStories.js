@@ -11,14 +11,14 @@ const isAnswerToStop = (userStorySummary: string): boolean =>
 
 export const solicitUserStories = async (): Promise<Array<Card>> => {
     logger.instructions(
-        '▶ Please start adding user stories. If you want to stop just enter an empty summary or just use q as a description');
+        'Please start adding features. If you want to stop just enter an empty summary or just type q as a description');
     const result = [];
     let counter = 1;
     while(true) {
         const answers = await inquirer.prompt([{
             type: 'input',
             name: questionName,
-            message: `Please enter the user story ${counter} description`,
+            message: `Please enter the description for feature ${counter}:`,
         }]);
         const userStorySummary = answers[questionName];
         if(isAnswerToStop(userStorySummary)) {
