@@ -10,6 +10,7 @@ export const solicitBoardName = async (): Promise<string> => {
     const answers = await inquirer.prompt([{
         name: questionName,
         message: 'Please enter the board name:',
+        prefix: '📝'
     }]);
     return answers[questionName];
 };
