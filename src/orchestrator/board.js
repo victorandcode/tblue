@@ -11,6 +11,7 @@ export const solicitBoardName = async (): Promise<string> => {
         name: questionName,
         message: 'Please enter the board name:',
         prefix: '📝',
+        validate: (value) => !!value || "The board name can't be empy"
     }]);
     return answers[questionName];
 };
