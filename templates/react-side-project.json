@@ -17,6 +17,12 @@
             "cardToGenerate": {
                 "name": "Add google analytics"
             }
+        },
+        {
+            "content": "Will you be using a typing system?",
+            "cardToGenerate": {
+                "name": "Setup typing system"
+            }
         }
     ],
     "cards": [
@@ -24,7 +30,16 @@
             "name": "Repository configuration"
         },
         {
-            "name": "Configure react router"
+            "name": "Define folder structure"
+        },
+        {
+            "name": "Create README with basic information about the project"
+        },
+        {
+            "name": "Choose dependency manager (npm, yarn, npx, other)"
+        },
+        {
+            "name": "Configure babel and babel plugins"
         },
         {
             "name": "Configure jest"
@@ -36,10 +51,13 @@
             "name": "Configure babel root import"
         },
         {
-            "name": "Add pre push hooks"
+            "name": "Configure redux"
         },
         {
-            "name": "Define folder structure"
+            "name": "Configure react router"
+        },
+        {
+            "name": "Add pre push hooks"
         },
         {
             "name": "Configure dev environment"
