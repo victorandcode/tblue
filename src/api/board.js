@@ -9,6 +9,7 @@ export const create = async (name: string): Board => {
         name,
         defaultLabels: 'true',
         defaultLists: 'true',
+        prefs_background: 'purple',
     };
     const response = await doPost(baseParams, createUrl);
     return response.data;
