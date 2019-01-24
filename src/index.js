@@ -7,7 +7,7 @@ import { begin } from '~/orchestrator';
 async function main() {
     try {
         printAppInfo();
-        validateEnvironment();
+        await validateEnvironment();
         await begin();
     } catch (error) {
         logger.fail(`${error.stack}`);
