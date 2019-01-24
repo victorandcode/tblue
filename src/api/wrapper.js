@@ -7,11 +7,11 @@
 import axios from 'axios';
 import qs from 'qs';
 
-import env from '~/common/env';
+import { getTrelloApiKey, getAppToken } from '~/common/env';
 
 export const getQueryParams = (baseParams: Object): string => {
-    const key = env.getTrelloApiKey();
-    const token = env.getAppToken();
+    const key = getTrelloApiKey();
+    const token = getAppToken();
     const fullParams = {
         ...baseParams,
         key,
