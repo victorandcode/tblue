@@ -1,6 +1,7 @@
 // @flow
 import opn from 'opn';
 import logger from './logger';
+import { keypress } from './stdin';
 
 export const envKeys = {
     trelloApiKey: 'TRELLO_API_KEY',
@@ -10,14 +11,6 @@ export const envKeys = {
 export const getEnvValue = (key: string) => process.env[key];
 export const getTrelloApiKey = () => getEnvValue(envKeys.trelloApiKey);
 export const getAppToken = () => getEnvValue(envKeys.appToken);
-
-const keypress = async () => {
-    process.stdin.setRawMode(true)
-    return new Promise(resolve => process.stdin.once('data', () => {
-        process.stdin.setRawMode(false)
-        resolve()
-    }))
-}
 
 const appKeyUrl = 'https://trello.com/app-key';
 
