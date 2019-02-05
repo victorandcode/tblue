@@ -1,4 +1,5 @@
 {
+    "name": "React side project",
     "questions": [
         {
             "content": "Will you be using Docker?",
