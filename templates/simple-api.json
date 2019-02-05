@@ -1,4 +1,5 @@
 {
+    "name": "Simple API",
     "questions": [
         {
             "content": "Will you be using Docker?",
