@@ -2,7 +2,7 @@
 import inquirer from 'inquirer';
 
 import logger from '~/common/logger';
-import type { Card } from '~/templates/types';
+import type { Card } from '~/types';
 
 export const questionName = 'userStorySummary';
 
