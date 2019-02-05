@@ -1,6 +1,6 @@
 import inquirer from 'inquirer';
 
-import type { Card, Questionnaire } from '~/templates/types';
+import type { Card, Questionnaire } from '~/types';
 
 export const askQuestions = async (questionnaire: Questionnaire): Array<Card> => {
     const questions = questionnaire.questions;

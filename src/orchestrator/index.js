@@ -1,6 +1,6 @@
 // @flow
 import logger from '~/common/logger';
-import type { Card } from '~/templates/types';
+import type { Card } from '~/types';
 import { create as createBoard, getLists } from '~/api/board';
 import { create as createCard } from '~/api/card';
 import { solicitBoardName, solicitOpenBoardUrl } from './board';
