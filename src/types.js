@@ -9,7 +9,7 @@ export type Question = {
 };
 
 export type Questionnaire = {
-    cards: Array<Card>
+    cards: Array<Card>,
     name: string,
     questions: Array<Question>,
 };
