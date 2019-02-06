@@ -1,8 +1,10 @@
 {
+  "author": "Victor Cordova",
   "name": "tman-trello-scaffolding",
   "version": "0.1.0",
   "description": "Scaffolding for trello (like yeoman but for trello)",
-  "main": "src/index.js",
+  "url": "https://github.com/victor-cordova/tman",
+  "main": "dist/bundle.js",
   "scripts": {
     "start": "babel-node src/index.js",
     "test": "npm run test:typing && npm run test:lint && npm run test:unit",
@@ -14,10 +16,11 @@
   },
   "keywords": [
     "Trello",
-    "Yeoman"
+    "Yeoman",
+    "cli",
+    "node"
   ],
-  "author": "Victor Cordova",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
