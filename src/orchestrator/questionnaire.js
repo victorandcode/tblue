@@ -1,7 +1,7 @@
 // @flow
 import inquirer from 'inquirer';
 import logger from '~/common/logger';
-import templates from '../../templates';
+import templates from '~/templates';
 import type { Questionnaire } from '~/types';
 
 const questionName = 'selectedQuestionnaire';
