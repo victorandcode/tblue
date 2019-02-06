@@ -34,6 +34,7 @@ export const validateEnvironment = async () => {
 
     const appToken = getAppToken();
     if(!appToken) {
+        // $FlowFixMe
         await stopAndDirectUserToUrl(envKeys.appToken, appTokenUrl(apiKey));
     }
 };
