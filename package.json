@@ -1,5 +1,8 @@
 {
   "author": "Victor Cordova",
+  "bin": {
+    "qtrello": "./src/index.js"
+  },
   "name": "qtrello",
   "version": "0.1.0",
   "description": "Scaffolding for trello (like yeoman but for trello)",
