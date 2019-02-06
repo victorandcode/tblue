@@ -1,6 +1,6 @@
 {
   "author": "Victor Cordova",
-  "name": "tman-trello-scaffolding",
+  "name": "qtrello",
   "version": "0.1.0",
   "description": "Scaffolding for trello (like yeoman but for trello)",
   "url": "https://github.com/victor-cordova/tman",
@@ -41,7 +41,8 @@
     "prettier": "1.15.3",
     "regenerator-runtime": "^0.13.1",
     "webpack": "^4.29.1",
-    "webpack-cli": "^3.2.3"
+    "webpack-cli": "^3.2.3",
+    "webpack-node-externals": "^1.7.2"
   },
   "husky": {
     "hooks": {
