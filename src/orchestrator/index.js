@@ -10,8 +10,8 @@ import { solicitUserStories } from './userStories';
 
 export const padding = () => logger.warning('');
 
-const getCards = async (): Promise<Array<Card>> => {
-    const questionnaire = await solicitQuestionnaire();
+const getCards = async (customTemplatesFolder: ?string): Promise<Array<Card>> => {
+    const questionnaire = await solicitQuestionnaire(customTemplatesFolder);
     const questionGeneratedCards = await askQuestions(questionnaire);
     padding();
     const userStoryCards = await solicitUserStories();
@@ -36,10 +36,10 @@ const registerData = async (boardName: string, cards: Array<Card>) => {
     return board;
 };
 
-export const begin = async () => {
+export const begin = async (customTemplatesFolder: ?string) => {
     const boardName = await solicitBoardName();
     padding();
-    const cards = await getCards();
+    const cards = await getCards(customTemplatesFolder);
     padding();
     const board = await registerData(boardName, cards);
     padding();

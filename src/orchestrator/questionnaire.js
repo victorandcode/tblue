@@ -33,8 +33,8 @@ export const getQuestionnaireList = (customQuestionnairesPath: ?string) => {
     return builtInTemplates;
 };
 
-export const solicitQuestionnaire = async (): Questionnaire => {
-    const questionnaires = getQuestionnaireList();
+export const solicitQuestionnaire = async (customTemplatesFolder: ?string): Questionnaire => {
+    const questionnaires = getQuestionnaireList(customTemplatesFolder);
     logger.instructions(
         'Questionnaires contain pre-defined cards and also cards generated based on your answers');
     const answers = await inquirer
