@@ -19,7 +19,8 @@
     "no-unused-vars": 2,
     "indent": ["error", 4],
     "no-trailing-spaces": 2,
-    "quotes": ["error", "single"]
+    "quotes": ["error", "single"],
+    "semi": ["error"]
   },
   "plugins": ["jest"],
   "env": {

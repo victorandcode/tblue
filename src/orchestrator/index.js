@@ -20,7 +20,7 @@ const getCards = async (customTemplatesFolder: ?string): Promise<Array<Card>> =>
         ...questionnaire.cards,
         ...userStoryCards,
     ];
-}
+};
 
 const registerData = async (boardName: string, cards: Array<Card>) => {
     const board = await createBoard(boardName);
@@ -30,7 +30,7 @@ const registerData = async (boardName: string, cards: Array<Card>) => {
     for(let i = 0; i < cards.length; i++) {
         const card = cards[i];
         await createCard(card.name, listId);
-        logger.warning(`Created ${i+1}/${cards.length} cards`)
+        logger.warning(`Created ${i+1}/${cards.length} cards`);
     }
     logger.success('✔️ All cards created!');
     return board;

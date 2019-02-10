@@ -9,7 +9,7 @@ jest.mock('../logger');
 jest.mock('../stdin');
 
 jest.mock('inquirer', () => {
-    prompt: async () => jest.fn()
+    prompt: async () => jest.fn();
 });
 
 xdescribe('alertAndOpenUrl', () => {

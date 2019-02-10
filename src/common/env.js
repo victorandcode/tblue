@@ -24,7 +24,7 @@ export const stopAndDirectUserToUrl = async (missingEnvKey: string, url: string)
     opn(url);
     logger.instructions('Please grab the value from the web page and add it as an environment variable. Then, reload the terminal.');
     process.exit();
-}
+};
 
 export const validateEnvironment = async () => {
     const apiKey = getTrelloApiKey();

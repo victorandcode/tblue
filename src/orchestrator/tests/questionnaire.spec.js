@@ -1,4 +1,4 @@
-import * as templates from '~/templates'
+import * as templates from '~/templates';
 import { getQuestionnaireList } from '../questionnaire';
 import { basicQuestionnaire, userRegisteredQuestionnaire } from './stubs';
 import fs from 'fs';

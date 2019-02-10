@@ -23,7 +23,7 @@ export const solicitOpenBoardUrl = async (board: Board) => {
             type: 'confirm',
             name: questionName,
             message: `Board url is ${board.url}, would you like to open it?`,
-        }])
+        }]);
     if(answer[questionName]) {
         opn(board.url);
     }

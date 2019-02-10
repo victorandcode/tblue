@@ -13,8 +13,8 @@ const generateQuestionnaire = (name: string, questions, cardNames: Array<string>
         name,
         questions,
         cards,
-    }
-}
+    };
+};
 
 export const basicQuestionnaire = generateQuestionnaire(
     'Frontend App',
@@ -48,7 +48,7 @@ export const basicQuestionnaire = generateQuestionnaire(
         'Configure dev environment',
         'Configure CI',
     ]
-)
+);
 
 export const userRegisteredQuestionnaire = generateQuestionnaire(
     'My first template',
