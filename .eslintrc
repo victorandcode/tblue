@@ -23,6 +23,8 @@
   },
   "plugins": ["jest"],
   "env": {
-    "jest/globals": true
+    "jest/globals": true,
+    "node": true,
+    "es6": true
   }
 }
