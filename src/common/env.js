@@ -2,6 +2,7 @@
 import opn from 'opn';
 import logger from './logger';
 import { keypress } from './stdin';
+import packageJson from '../../package.json';
 
 export const envKeys = {
     trelloApiKey: 'TRELLO_API_KEY',
@@ -14,7 +15,7 @@ export const getAppToken = () => getEnvValue(envKeys.appToken);
 
 const appKeyUrl = 'https://trello.com/app-key';
 
-const appTokenUrl = (apiKey: string) => `https://trello.com/1/authorize?key=${apiKey}&name=TmanScaffoldingForTrello&expiration=never&response_type=token&scope=read,write`;
+const appTokenUrl = (apiKey: string) => `https://trello.com/1/authorize?key=${apiKey}&name=${packageJson}ScaffoldingForTrello&expiration=never&response_type=token&scope=read,write`;
 
 export const stopAndDirectUserToUrl = async (missingEnvKey: string, url: string) => {
     logger.instructions(

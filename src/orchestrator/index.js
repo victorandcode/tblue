@@ -1,6 +1,7 @@
 // @flow
 import logger from '~/common/logger';
 import type { Card } from '~/types';
+import packageJson from '../../package.json';
 import { create as createBoard, getLists } from '~/api/board';
 import { create as createCard } from '~/api/card';
 import { solicitBoardName, solicitOpenBoardUrl } from './board';
@@ -45,5 +46,5 @@ export const begin = async (customTemplatesFolder: ?string) => {
     padding();
     await solicitOpenBoardUrl(board);
     padding();
-    logger.success('💜 Thanks for using tman');
+    logger.success(`💜 Thanks for using ${packageJson.name}`);
 };

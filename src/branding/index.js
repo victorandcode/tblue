@@ -7,7 +7,7 @@ import packageJson from '../../package.json';
 export const printAppInfo = () => {
     logger.base(
         asciiLogo({
-            name: 'T-MAN',
+            name: packageJson.name.toUpperCase(),
             font: 'Alligator',
             lineChars: 15,
             padding: 5,

@@ -5,8 +5,8 @@
   },
   "name": "qtrello",
   "version": "0.1.0",
-  "description": "Scaffolding for trello (like yeoman but for trello)",
-  "url": "https://github.com/victor-cordova/tman",
+  "description": "Trello scaffolding (i.e. yeoman for trello)",
+  "url": "https://github.com/victor-cordova/qtrello",
   "main": "dist/bundle.js",
   "scripts": {
     "start": "babel-node src/cli.js",
