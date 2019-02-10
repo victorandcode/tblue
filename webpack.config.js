@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const path = require('path');
 const nodeExternals = require('webpack-node-externals');
 
@@ -23,5 +24,8 @@ module.exports = {
                 }
             }
         ]
-    }
+    },
+    plugins: [
+        new webpack.BannerPlugin({ banner: '#!/usr/bin/env node', raw: true })
+    ]
 }

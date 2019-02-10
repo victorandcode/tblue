@@ -1,7 +1,7 @@
 {
   "author": "Victor Cordova",
   "bin": {
-    "qtrello": "./dist/cli.js"
+    "qtrello": "./dist/bundle.js"
   },
   "name": "qtrello",
   "version": "0.1.0",
