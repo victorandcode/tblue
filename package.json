@@ -1,7 +1,7 @@
 {
   "author": "Victor Cordova",
   "bin": {
-    "qtrello": "./src/index.js"
+    "qtrello": "./dist/cli.js"
   },
   "name": "qtrello",
   "version": "0.1.0",
@@ -9,7 +9,7 @@
   "url": "https://github.com/victor-cordova/tman",
   "main": "dist/bundle.js",
   "scripts": {
-    "start": "babel-node src/index.js",
+    "start": "babel-node src/cli.js",
     "test": "npm run test:typing && npm run test:lint && npm run test:unit",
     "build": "webpack --config webpack.config.js",
     "test:unit": "jest src",
