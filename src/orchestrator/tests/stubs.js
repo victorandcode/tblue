@@ -1,10 +1,24 @@
+// @flow
+import type { Card, Questionnaire } from '~/types';
 export const questionGeneratedCards = [
     { 'name': 'Create dockerfile' },
     { 'name': 'Add google analytics' },
 ];
 
-export const basicQuestionnaire = {
-    'questions': [
+const generateQuestionnaire = (name: string, questions, cardNames: Array<string>): Questionnaire => {
+    const cards: Array<Card> = cardNames.map(cardName => ({
+        name: cardName,
+    }));
+    return {
+        name,
+        questions,
+        cards,
+    }
+}
+
+export const basicQuestionnaire = generateQuestionnaire(
+    'Frontend App',
+    [
         {
             'content': 'Will you be using Docker?',
             'cardToGenerate': {
@@ -24,35 +38,70 @@ export const basicQuestionnaire = {
             },
         },
     ],
-    'cards': [
+    [
+        'Repository configuration',
+        'Configure react router',
+        'Configure jest',
+        'Configure babel root import',
+        'Add pre push hooks',
+        'Define folder structure',
+        'Configure dev environment',
+        'Configure CI',
+    ]
+)
+
+export const userRegisteredQuestionnaire = generateQuestionnaire(
+    'My first template',
+    [
         {
-            'name': 'Repository configuration',
-            'description': '- Create repo in ',
+            'content': 'Will you run this in Amazon S3?',
+            'cardToGenerate': {
+                'name': 'Deploy project to Amazon S3',
+            },
         },
         {
-            'name': 'Configure react router',
-            'description': '',
-        },
-        {
-            'name': 'Configure jest',
-        },
-        {
-            'name': 'Configure babel root import',
-        },
-        {
-            'name': 'Add pre push hooks',
-        },
-        {
-            'name': 'Define folder structure',
-            'description': '',
-        },
-        {
-            'name': 'Configure dev environment',
-            'description': '',
-        },
-        {
-            'name': 'Configure CI',
-            'description': '',
+            'content': 'Will you create a github landing page?',
+            'cardToGenerate': {
+                'name': 'Setup github landing page',
+            },
         },
     ],
-}
+    [
+        'Configure development environment',
+        'Install jQuery',
+        'Setup HTML5 boilerplate',
+        'Configure CI',
+    ]
+);
+
+// export const invalidQuestionnaires = {
+//     questionnaireNoName: {
+//         questions: [
+//             {
+//                 'content': 'Will you run this in Amazon S3?',
+//                 'cardToGenerate': {
+//                     'name': 'Deploy project to Amazon S3',
+//                 },
+//             },
+//         ],
+
+//     },
+//     questionnaireNoQuestions: {
+//         name: 'My first template',
+
+//     },
+//     questionnaireBadQuestionnaire: {
+//         name: 'My first template'
+//         questions: [
+//             {
+//                 'content': 'Will you run this in Amazon S3?',
+//             },
+//         ],
+//         [
+//             'Configure development environment',
+//             'Install jQuery',
+//             'Setup HTML5 boilerplate',
+//             'Configure CI',
+//         ]
+//     },
+// };

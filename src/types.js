@@ -1,6 +1,5 @@
 export type Card = {
     name: string,
-    description?: string,
 };
 
 export type Question = {
