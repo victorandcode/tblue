@@ -2,6 +2,7 @@
 import inquirer from 'inquirer';
 import fs from 'fs';
 import path from 'path';
+import * as yup from 'yup';
 
 import logger from '~/common/logger';
 import { builtInTemplates } from '~/templates';
@@ -9,9 +10,21 @@ import type { Questionnaire } from '~/types';
 
 const questionName = 'selectedQuestionnaire';
 
-export const matchesQuestionnaireFormat = (/*candidateQuestionnaire: Object = ""*/): boolean => {
-    return true;
-};
+const schema = yup.object().shape({
+    name: yup.string().required(),
+    questions: yup.array().of(yup.object().shape({
+        content: yup.string().required(),
+        cardToGenerate: yup.object().shape({
+            name: yup.string().required(),
+        }),
+    })),
+    cards: yup.array().of(yup.object().shape({
+        name: yup.string().required(),
+    })),
+});
+
+export const matchesQuestionnaireFormat = (candidateQuestionnaire: Object): boolean =>
+    schema.isValidSync(candidateQuestionnaire);
 
 const fileToJson = (fileName: string, fileFolder: string): Object => {
     const filePath = path.join(fileFolder, fileName);
@@ -20,6 +33,7 @@ const fileToJson = (fileName: string, fileFolder: string): Object => {
 };
 
 export const getQuestionnaireList = (customQuestionnairesPath: ?string) => {
+    let questionnaires = builtInTemplates;
     if(customQuestionnairesPath) {
         const files = fs.readdirSync(customQuestionnairesPath);
         const jsonFileNames = files.filter(file => file.endsWith('.json'));
@@ -27,10 +41,10 @@ export const getQuestionnaireList = (customQuestionnairesPath: ?string) => {
             // $FlowFixMe
             jsonFileName => fileToJson(jsonFileName, customQuestionnairesPath)
         );
-        const customQuestionnaires = candidateCustomQuestionnaires.filter(matchesQuestionnaireFormat);
-        return [...customQuestionnaires, ...builtInTemplates]
+        const customQuestionnaires = candidateCustomQuestionnaires;
+        questionnaires = [...customQuestionnaires, ...questionnaires];
     }
-    return builtInTemplates;
+    return questionnaires.filter(matchesQuestionnaireFormat);
 };
 
 export const solicitQuestionnaire = async (customTemplatesFolder: ?string): Questionnaire => {
