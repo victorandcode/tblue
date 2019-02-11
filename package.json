@@ -5,7 +5,7 @@
   },
   "name": "qtrello",
   "version": "0.1.0",
-  "description": "Trello scaffolding (i.e. yeoman for trello)",
+  "description": "Questionnaire based Trello scaffolding (i.e. yeoman for trello)",
   "url": "https://github.com/victor-cordova/qtrello",
   "main": "dist/bundle.js",
   "scripts": {
@@ -15,10 +15,18 @@
     "test:unit": "jest src",
     "test:lint": "eslint src/",
     "test:typing": "flow",
-    "prettier": "prettier --write src/**.js"
+    "prettier": "prettier --write src/**.js",
+    "prepublish": "npm run test && npm run build"
   },
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "Trello",
+    "Scaffolding",
+    "Questionnaire",
+    "Question",
+    "Template",
     "Yeoman",
     "cli",
     "node"
