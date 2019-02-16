@@ -19,7 +19,7 @@ const appTokenUrl = (apiKey: string) => `https://trello.com/1/authorize?key=${ap
 
 export const stopAndDirectUserToUrl = async (missingEnvKey: string, url: string) => {
     logger.instructions(
-        `You don\'t have the environment variable ${missingEnvKey} set. Press any key to open the URL where you can grab the value for it.`
+        `You don\'t have the environment variable ${missingEnvKey} set. Press any key to open the URL where you can grab the value for it. YOU MUST BE LOGGED IN TO TRELLO.`
     );
     await keypress();
     await opn(url);
