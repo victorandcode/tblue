@@ -15,7 +15,7 @@ export const getAppToken = () => getEnvValue(envKeys.appToken);
 
 const appKeyUrl = 'https://trello.com/app-key';
 
-const appTokenUrl = (apiKey: string) => `https://trello.com/1/authorize?key=${apiKey}&name=${packageJson}ScaffoldingForTrello&expiration=never&response_type=token&scope=read,write`;
+const appTokenUrl = (apiKey: string) => `https://trello.com/1/authorize?key=${apiKey}&name=${packageJson.name}ScaffoldingForTrello&expiration=never&response_type=token&scope=read,write`;
 
 export const stopAndDirectUserToUrl = async (missingEnvKey: string, url: string) => {
     logger.instructions(
