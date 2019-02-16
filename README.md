@@ -1,7 +1,7 @@
 # tblue
 > Trello blueprints, scaffolding for trello boards (a.k.a. yeoman for trello)
 
-TODO: GIF
+![Demo](./demo.gif)
 
 ## Motivation
 If you use trello a lot, it's likely that you have common tasks based on past experience and also custom cards for this project only. Wouldn't it be nice to have some sort of blueprint or template we could use to bootstrap our boards? This project aims to solve this need.
