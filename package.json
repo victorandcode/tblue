@@ -3,10 +3,10 @@
   "bin": {
     "tblue": "./dist/bundle.js"
   },
-  "name": "qtrello",
+  "name": "tblue",
   "version": "0.1.0",
-  "description": "Questionnaire based Trello scaffolding (i.e. yeoman for trello)",
-  "url": "https://github.com/victor-cordova/qtrello",
+  "description": "Trello blueprints, scaffolding for trello boards (a.k.a. yeoman for trello)",
+  "url": "https://github.com/victor-cordova/tblue",
   "main": "dist/bundle.js",
   "scripts": {
     "start": "babel-node src/cli.js",
@@ -27,6 +27,7 @@
     "Questionnaire",
     "Question",
     "Template",
+    "Blueprint",
     "Yeoman",
     "cli",
     "node"
