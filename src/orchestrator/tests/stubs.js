@@ -87,11 +87,11 @@ export const userRegisteredBlueprint = generateBlueprint(
 
 //     },
 //     blueprintNoQuestions: {
-//         name: 'My first template',
+//         name: 'My first blueprint',
 
 //     },
 //     blueprintBadBlueprint: {
-//         name: 'My first template'
+//         name: 'My first blueprint'
 //         questions: [
 //             {
 //                 'content': 'Will you run this in Amazon S3?',

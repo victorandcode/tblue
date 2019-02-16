@@ -33,7 +33,7 @@ describe('getBlueprintList', () => {
 
 //     it('returns false for invalid blueprint', () => {
 //         const blueprintBadBlueprint = {
-//             name: 'My first template'
+//             name: 'My first blueprint'
 //             blueprint: [
 //                 {
 //                     'content': 'Will you run this in Amazon S3?',
