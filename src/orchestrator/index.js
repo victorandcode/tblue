@@ -5,20 +5,20 @@ import packageJson from '../../package.json';
 import { create as createBoard, getLists } from '~/api/board';
 import { create as createCard } from '~/api/card';
 import { solicitBoardName, solicitOpenBoardUrl } from './board';
-import { solicitQuestionnaire } from './questionnaire';
+import { solicitBlueprint } from './blueprints';
 import { askQuestions } from './questions';
 import { solicitUserStories } from './userStories';
 
 export const padding = () => logger.warning('');
 
 const getCards = async (customBlueprintsFolder: ?string): Promise<Array<Card>> => {
-    const questionnaire = await solicitQuestionnaire(customBlueprintsFolder);
-    const questionGeneratedCards = await askQuestions(questionnaire);
+    const blueprint = await solicitBlueprint(customBlueprintsFolder);
+    const questionGeneratedCards = await askQuestions(blueprint);
     padding();
     const userStoryCards = await solicitUserStories();
     return [
         ...questionGeneratedCards,
-        ...questionnaire.cards,
+        ...blueprint.cards,
         ...userStoryCards,
     ];
 };

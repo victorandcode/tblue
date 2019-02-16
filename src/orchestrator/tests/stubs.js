@@ -1,11 +1,11 @@
 // @flow
-import type { Card, Questionnaire } from '~/types';
+import type { Card, Blueprint } from '~/types';
 export const questionGeneratedCards = [
     { 'name': 'Create dockerfile' },
     { 'name': 'Add google analytics' },
 ];
 
-const generateQuestionnaire = (name: string, questions, cardNames: Array<string>): Questionnaire => {
+const generateBlueprint = (name: string, questions, cardNames: Array<string>): Blueprint => {
     const cards: Array<Card> = cardNames.map(cardName => ({
         name: cardName,
     }));
@@ -16,7 +16,7 @@ const generateQuestionnaire = (name: string, questions, cardNames: Array<string>
     };
 };
 
-export const basicQuestionnaire = generateQuestionnaire(
+export const basicBlueprint = generateBlueprint(
     'Frontend App',
     [
         {
@@ -50,7 +50,7 @@ export const basicQuestionnaire = generateQuestionnaire(
     ]
 );
 
-export const userRegisteredQuestionnaire = generateQuestionnaire(
+export const userRegisteredBlueprint = generateBlueprint(
     'My first blueprint',
     [
         {
@@ -74,8 +74,8 @@ export const userRegisteredQuestionnaire = generateQuestionnaire(
     ]
 );
 
-// export const invalidQuestionnaires = {
-//     questionnaireNoName: {
+// export const invalidBlueprints = {
+//     blueprintNoName: {
 //         questions: [
 //             {
 //                 'content': 'Will you run this in Amazon S3?',
@@ -86,11 +86,11 @@ export const userRegisteredQuestionnaire = generateQuestionnaire(
 //         ],
 
 //     },
-//     questionnaireNoQuestions: {
+//     blueprintNoQuestions: {
 //         name: 'My first template',
 
 //     },
-//     questionnaireBadQuestionnaire: {
+//     blueprintBadBlueprint: {
 //         name: 'My first template'
 //         questions: [
 //             {

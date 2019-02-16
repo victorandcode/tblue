@@ -7,7 +7,7 @@ export type Question = {
     cardToGenerate: Card,
 };
 
-export type Questionnaire = {
+export type Blueprint = {
     cards: Array<Card>,
     name: string,
     questions: Array<Question>,
