@@ -22,7 +22,7 @@ export const stopAndDirectUserToUrl = async (missingEnvKey: string, url: string)
         `You don\'t have the environment variable ${missingEnvKey} set. Press any key to open the URL where you can grab the value for it.`
     );
     await keypress();
-    opn(url);
+    await opn(url);
     logger.instructions('Please grab the value from the web page and add it as an environment variable. Then, reload the terminal.');
     process.exit();
 };
