@@ -11,8 +11,8 @@ import { solicitUserStories } from './userStories';
 
 export const padding = () => logger.warning('');
 
-const getCards = async (customTemplatesFolder: ?string): Promise<Array<Card>> => {
-    const questionnaire = await solicitQuestionnaire(customTemplatesFolder);
+const getCards = async (customBlueprintsFolder: ?string): Promise<Array<Card>> => {
+    const questionnaire = await solicitQuestionnaire(customBlueprintsFolder);
     const questionGeneratedCards = await askQuestions(questionnaire);
     padding();
     const userStoryCards = await solicitUserStories();
@@ -37,10 +37,10 @@ const registerData = async (boardName: string, cards: Array<Card>) => {
     return board;
 };
 
-export const begin = async (customTemplatesFolder: ?string) => {
+export const begin = async (customBlueprintsFolder: ?string) => {
     const boardName = await solicitBoardName();
     padding();
-    const cards = await getCards(customTemplatesFolder);
+    const cards = await getCards(customBlueprintsFolder);
     padding();
     const board = await registerData(boardName, cards);
     padding();

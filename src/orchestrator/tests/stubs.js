@@ -51,7 +51,7 @@ export const basicQuestionnaire = generateQuestionnaire(
 );
 
 export const userRegisteredQuestionnaire = generateQuestionnaire(
-    'My first template',
+    'My first blueprint',
     [
         {
             'content': 'Will you run this in Amazon S3?',

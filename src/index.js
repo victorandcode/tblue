@@ -8,7 +8,7 @@ import { begin } from '~/orchestrator';
 
 const parseArguments = () => {
     program
-        .option('-c, --custom-templates-folder [customTemplatesFolder]', 'Custom templates folder')
+        .option('-c, --custom-blueprints-folder [customBlueprintsFolder]', 'Custom blueprints folder')
         .parse(process.argv);
     return program;
 };
@@ -18,7 +18,7 @@ async function main() {
         const programArguments = parseArguments();
         printAppInfo();
         await validateEnvironment();
-        await begin(programArguments.customTemplatesFolder);
+        await begin(programArguments.customBlueprintsFolder);
     } catch (error) {
         logger.fail(`${error.stack}`);
     }

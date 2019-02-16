@@ -1,24 +1,24 @@
-import * as templates from '~/templates';
+import * as blueprints from '~/blueprints';
 import { getQuestionnaireList } from '../questionnaire';
 import { basicQuestionnaire, userRegisteredQuestionnaire } from './stubs';
 import fs from 'fs';
 
 jest.mock('fs');
 jest.mock('path');
-jest.mock('../../templates/index.js');
+jest.mock('../../blueprints/index.js');
 
 describe('getQuestionnaireList', () => {
-    it('returns builtInTemplates', () => {
+    it('returns builtInBlueprints', () => {
         const questionnaires = [basicQuestionnaire];
-        templates.builtInTemplates = questionnaires;
+        blueprints.builtInBlueprints = questionnaires;
         expect(getQuestionnaireList()).toEqual(questionnaires);
     });
     describe('when customFolder is passed', () => {
-        it('returns builtInTemplates and custom templates', () => {
+        it('returns builtInBlueprints and custom blueprints', () => {
             const allQuestionnaires = [userRegisteredQuestionnaire, basicQuestionnaire];
             const customFolder = '/my-custom-folder/';
-            const customTemplateFileName = 'my-first-template.json';
-            fs.readdirSync.mockImplementation(() => [customTemplateFileName]);
+            const customBlueprintFileName = 'my-first-blueprint.json';
+            fs.readdirSync.mockImplementation(() => [customBlueprintFileName]);
             fs.readFileSync.mockImplementation(() => JSON.stringify(userRegisteredQuestionnaire));
             expect(getQuestionnaireList(customFolder)).toEqual(allQuestionnaires);
             expect(fs.readdirSync).toHaveBeenCalledWith(customFolder);

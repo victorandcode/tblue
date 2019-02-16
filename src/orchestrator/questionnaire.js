@@ -5,7 +5,7 @@ import path from 'path';
 import * as yup from 'yup';
 
 import logger from '~/common/logger';
-import { builtInTemplates } from '~/templates';
+import { builtInBlueprints } from '~/blueprints';
 import type { Questionnaire } from '~/types';
 
 const questionName = 'selectedQuestionnaire';
@@ -33,7 +33,7 @@ const fileToJson = (fileName: string, fileFolder: string): Object => {
 };
 
 export const getQuestionnaireList = (customQuestionnairesPath: ?string) => {
-    let questionnaires = builtInTemplates;
+    let questionnaires = builtInBlueprints;
     if(customQuestionnairesPath) {
         const files = fs.readdirSync(customQuestionnairesPath);
         const jsonFileNames = files.filter(file => file.endsWith('.json'));
@@ -47,8 +47,8 @@ export const getQuestionnaireList = (customQuestionnairesPath: ?string) => {
     return questionnaires.filter(matchesQuestionnaireFormat);
 };
 
-export const solicitQuestionnaire = async (customTemplatesFolder: ?string): Questionnaire => {
-    const questionnaires = getQuestionnaireList(customTemplatesFolder);
+export const solicitQuestionnaire = async (customBlueprintsFolder: ?string): Questionnaire => {
+    const questionnaires = getQuestionnaireList(customBlueprintsFolder);
     logger.instructions(
         'Questionnaires contain pre-defined cards and also cards generated based on your answers');
     const answers = await inquirer
