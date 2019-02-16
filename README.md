@@ -1,10 +1,21 @@
-# tblue
-> Trello blueprints, scaffolding for trello boards (a.k.a. yeoman for trello)
+<h1 align="center">
+  <br>
+  tblue
+  <br>
+</h1>
+
+<h4 align="center">Trello blueprints, scaffolding for trello boards (a.k.a. yeoman for trello)</h4>
 
 ![Demo](./demo.gif)
 
-## Motivation
-If you use trello a lot, it's likely that you have common tasks based on past experience and also custom cards for this project only. Wouldn't it be nice to have some sort of blueprint or template we could use to bootstrap our boards? This project aims to solve this need.
+## 💡 Motivation
+If you use trello a lot, it's likely that you have common tasks based on past experience and also custom cards for a given project. Wouldn't it be nice to have some sort of blueprint or template we could use to bootstrap our boards? This project aims to solve this need.
+
+## 🏃 How to run
+```sh
+npm install -g tblue
+tblue
+```
 
 ## 🔧 Setup
 This project requires 2 environment variables set. Please add them to your .bash_profile or wherever they are needed for your environment. Next you'll find which variables you need to set and what value you should use for each one.
@@ -23,12 +34,6 @@ Grant access to the script so you get a token, only you know what this token is 
 
 Now place the token as the value for this environment variable.
 
-## 🏃 How to run
-```bash
-npm install -g tblue
-tblue
-```
-
 ## 📜 Workflow
 1. Choose a name for your board
 2. Choose which blueprint you want to use
@@ -41,7 +46,7 @@ tblue
 
 ### Custom blueprints
 The custom blueprints you create must have the following format. **If they don't, they will not show up in the blueprints selection screen**.
-```json
+```js
 {
     //Name that will be prompted in the CLI
     "name": "Simple API",
@@ -62,13 +67,13 @@ The custom blueprints you create must have the following format. **If they don't
 ```
 
 ## Running locally
-```bash
+```sh
 npm install
 npm start
 ```
 
 ## Run tests
-```bash
+```sh
 npm test
 ```
 
