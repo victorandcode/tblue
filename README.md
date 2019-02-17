@@ -51,6 +51,9 @@ The custom blueprints you create must have the following format. **If they don't
     //Name that will be prompted in the CLI
     "name": "Simple API",
 
+    //The name you give to features for your particular blueprint. e.g. feature, endpoint, article, etc
+    "unitOfWork": "feature",
+
     //Questions that could generate a card according to your project's need
     "questions": [
         {

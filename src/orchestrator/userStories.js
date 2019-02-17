@@ -9,16 +9,16 @@ export const questionName = 'userStorySummary';
 const isAnswerToStop = (userStorySummary: string): boolean =>
     userStorySummary === 'q' || userStorySummary === '';
 
-export const solicitUserStories = async (): Promise<Array<Card>> => {
+export const solicitUserStories = async (unitOfWork: string): Promise<Array<Card>> => {
     logger.instructions(
-        'Please start adding features. If you want to stop just enter an empty description or just type q as a description');
+        `Enter zero or more ${unitOfWork} descriptions. If you want to stop just enter an empty description or enter q as a description`);
     const result = [];
     let counter = 1;
     while(true) {
         const answers = await inquirer.prompt([{
             type: 'input',
             name: questionName,
-            message: `Please enter the description for feature ${counter}:`,
+            message: `Please enter the description for ${unitOfWork} ${counter}:`,
         }]);
         const userStorySummary = answers[questionName];
         if(isAnswerToStop(userStorySummary)) {

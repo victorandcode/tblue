@@ -9,7 +9,7 @@ describe('userStories', () => {
             inquirer.prompt.mockImplementation(() => Promise.resolve({
                 questionName: 'Search for products',
             }));
-            const [card] = await solicitUserStories();
+            const [card] = await solicitUserStories('');
             expect(card).toEqual({
                 'name': 'Search for products',
             });

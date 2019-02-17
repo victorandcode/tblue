@@ -10,5 +10,6 @@ export type Question = {
 export type Blueprint = {
     cards: Array<Card>,
     name: string,
+    unitOfWork: string,
     questions: Array<Question>,
 };

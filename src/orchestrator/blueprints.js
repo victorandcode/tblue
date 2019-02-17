@@ -1,3 +1,4 @@
+
 // @flow
 import inquirer from 'inquirer';
 import fs from 'fs';
@@ -12,6 +13,7 @@ const questionName = 'selectedBlueprint';
 
 const schema = yup.object().shape({
     name: yup.string().required(),
+    unitOfWork: yup.string().required(),
     questions: yup.array().of(yup.object().shape({
         content: yup.string().required(),
         cardToGenerate: yup.object().shape({
