@@ -24,13 +24,19 @@ This project requires 2 environment variables set. Please add them to your .bash
 
 ### TRELLO_API_KEY
 Log into trello and copy the developer key from https://trello.com/app-key. Use that value for this environment variable.
+![Api Key](./api_key.png)
 
 ### APP_TOKEN
 Use your api key from last step and replace **API_KEY** inside the next url https://trello.com/1/authorize?key=API_KEY&name=tblueScaffoldingForTrello&expiration=never&response_type=token&scope=read,write
 
 Now copy/paste the full url into your browser
 
-Grant access to the script so you get a token, <span style="color:red">only you know what this token is so only your local instance of `tblue` will use it.</span>
+![Api Key](./app_token.png)
+
+Grant access to the script so you get a token, <span style="color:red">only you know what this token is so only your local instance of `tblue` 
+will use it.</span>
+
+![Api Key](./app_token2.png)
 
 Now place the token as the value for this environment variable.
 
