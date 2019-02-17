@@ -1,5 +1,6 @@
 {
     "name": "Wordpress Blog",
+    "unitOfWork": "article",
     "questions": [
         {
             "content": "Will you acquire a domain?",

@@ -1,5 +1,6 @@
 {
     "name": "Simple express.js API",
+    "unitOfWork": "endpoint",
     "questions": [
         {
             "content": "Will you create a status endpoint?",

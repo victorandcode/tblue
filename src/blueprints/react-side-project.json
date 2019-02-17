@@ -1,5 +1,6 @@
 {
     "name": "React side project",
+    "unitOfWork": "feature",
     "questions": [
         {
             "content": "Will you be using a typing system?",
