@@ -4,6 +4,8 @@
   <br>
 </h1>
 
+[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Trello%20Scaffolding%20CLI%20tool!%20Tblue&url=https://github.com/victor-cordova/tblue&hashtags=trello,scaffolding,yeoman,templates,developers,github)
+
 <h4 align="center">Trello blueprints, scaffolding for trello boards (a.k.a. yeoman for trello)</h4>
 
 ![Demo](./demo.gif)
