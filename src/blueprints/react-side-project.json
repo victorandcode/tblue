@@ -2,9 +2,15 @@
     "name": "React side project",
     "questions": [
         {
-            "content": "Will you be using Docker?",
+            "content": "Will you be using a typing system?",
             "cardToGenerate": {
-                "name": "Create Docker configuration"
+                "name": "Setup typing system"
+            }
+        },
+        {
+            "content": "Will you use sass for styling?",
+            "cardToGenerate": {
+                "name": "Setup plugins/loaders to work with sass"
             }
         },
         {
@@ -14,30 +20,27 @@
             }
         },
         {
-            "content": "Will you add google analytics?",
+            "content": "Will you be using Docker?",
             "cardToGenerate": {
-                "name": "Add google analytics"
+                "name": "Create Docker configuration"
             }
         },
         {
-            "content": "Will you be using a typing system?",
+            "content": "Will you add google analytics?",
             "cardToGenerate": {
-                "name": "Setup typing system"
+                "name": "Add google analytics"
             }
         }
     ],
     "cards": [
         {
-            "name": "Repository configuration"
+            "name": "Git repository configuration"
         },
         {
             "name": "Define folder structure"
         },
         {
             "name": "Create README with basic information about the project"
-        },
-        {
-            "name": "Choose dependency manager (npm, yarn, npx, other)"
         },
         {
             "name": "Configure babel and babel plugins"
@@ -49,19 +52,16 @@
             "name": "Configure eslint"
         },
         {
-            "name": "Configure babel root import"
-        },
-        {
             "name": "Configure redux"
         },
         {
             "name": "Configure react router"
         },
         {
-            "name": "Add pre push hooks"
+            "name": "Create npm scripts for common tasks"
         },
         {
-            "name": "Configure dev environment"
+            "name": "Setup package.json parameters (name, description, keywords, engine, author, license, url, main)"
         },
         {
             "name": "Configure CI"
