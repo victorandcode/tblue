@@ -8,6 +8,9 @@
 
 ![Demo](./demo.gif)
 
+**Result**:
+![Sample generated board](./sample_generated_board.png)
+
 ## 💡 Motivation
 If you use trello a lot, it's likely that you have common tasks based on past experience and also custom cards for a given project. Wouldn't it be nice to have some sort of blueprint or template we could use to bootstrap our boards? This project aims to solve this need.
 
