@@ -1,0 +1,47 @@
+{
+    "name": "Learn a new language",
+    "unitOfWork": "task",
+    "questions": [
+        {
+            "content": "Do you like using apps such as duolingo for learning?",
+            "cardToGenerate": {
+                "name": "Create an account in duolingo and other sites such as italki"
+            }
+        },
+        {
+            "content": "Do you like listening to podcasts?",
+            "cardToGenerate": {
+                "name": "Search and subscribe to podcasts for this language"
+            }
+        },
+        {
+            "content": "Do you like reading books in a foreign language?",
+            "cardToGenerate": {
+                "name": "Search and buy foreign language book"
+            }
+        },
+        {
+            "content": "Do you like to follow youtubers in foreign languages?",
+            "cardToGenerate": {
+                "name": "Search and subscribe to youtubers in foreign language"
+            }
+        }
+    ],
+    "cards": [
+        {
+            "name": "Buy dictionary"
+        },
+        {
+            "name": "Establish schedule for studying during the week"
+        },
+        {
+            "name": "Change language of phone and laptop"
+        },
+        {
+            "name": "Create a list of series and fils to watch"
+        },
+        {
+            "name": "Plan a trip to a country where this language is spoken"
+        }
+    ]
+}
