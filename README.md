@@ -5,6 +5,9 @@
 </h1>
 
 [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Trello%20Scaffolding%20CLI%20tool!%20Tblue&url=https://github.com/victor-cordova/tblue&hashtags=trello,scaffolding,yeoman,templates,developers,github)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![version](https://img.shields.io/badge/version-0.1.0-blue.svg?maxAge=2592000)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
 
 <h4 align="center">Trello blueprints, scaffolding for trello boards (a.k.a. yeoman for trello)</h4>
 
