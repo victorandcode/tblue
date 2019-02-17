@@ -1,10 +1,10 @@
 {
-    "name": "Simple API",
+    "name": "Simple express.js API",
     "questions": [
         {
-            "content": "Will you be using Docker?",
+            "content": "Will you create a status endpoint?",
             "cardToGenerate": {
-                "name": "Create Docker configuration"
+                "name": "Create status endpoint"
             }
         },
         {
@@ -20,6 +20,12 @@
             }
         },
         {
+            "content": "Will you be using Docker?",
+            "cardToGenerate": {
+                "name": "Create Docker configuration"
+            }
+        },
+        {
             "content": "Will you use sonarqube?",
             "cardToGenerate": {
                 "name": "Setup sonarqube"
@@ -31,19 +37,22 @@
             "name": "Repository configuration"
         },
         {
-            "name": "Setup logging"
+            "name": "Define folder structure"
         },
         {
-            "name": "Setup testing technologies"
+            "name": "Setup unit testing"
         },
         {
-            "name": "Create database schema"
+            "name": "Setup cors middleware"
         },
         {
-            "name": "Setup API documentation"
+            "name": "Setup session storage mechanism"
         },
         {
-            "name": "Setup persistance layer"
+            "name": "Setup logging library"
+        },
+        {
+            "name": "Document API"
         }
     ]
 }
