@@ -36,15 +36,19 @@ const fileToJson = (fileName: string, fileFolder: string): Object => {
 
 export const getBlueprintList = (customBlueprintsPath: ?string) => {
     let blueprints = builtInBlueprints;
-    if(customBlueprintsPath) {
-        const files = fs.readdirSync(customBlueprintsPath);
-        const jsonFileNames = files.filter(file => file.endsWith('.json'));
-        const candidateCustomBlueprints = jsonFileNames.map(
-            // $FlowFixMe
-            jsonFileName => fileToJson(jsonFileName, customBlueprintsPath)
-        );
-        const customBlueprints = candidateCustomBlueprints;
-        blueprints = [...customBlueprints, ...blueprints];
+    try {
+        if(customBlueprintsPath) {
+            const files = fs.readdirSync(customBlueprintsPath);
+            const jsonFileNames = files.filter(file => file.endsWith('.json'));
+            const candidateCustomBlueprints = jsonFileNames.map(
+                // $FlowFixMe
+                jsonFileName => fileToJson(jsonFileName, customBlueprintsPath)
+            );
+            const customBlueprints = candidateCustomBlueprints;
+            blueprints = [...customBlueprints, ...blueprints];
+        }
+    } catch (ex) {
+        logger.warning('Not able to read custom blueprint folder');
     }
     return blueprints.filter(matchesBlueprintFormat);
 };
