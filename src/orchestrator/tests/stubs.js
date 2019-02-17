@@ -5,7 +5,7 @@ export const questionGeneratedCards = [
     { 'name': 'Add google analytics' },
 ];
 
-const generateBlueprint = (name: string, questions, cardNames: Array<string>): Blueprint => {
+const generateBlueprint = (name: string, unitOfWork: string, questions, cardNames: Array<string>): Blueprint => {
     const cards: Array<Card> = cardNames.map(cardName => ({
         name: cardName,
     }));
@@ -13,11 +13,13 @@ const generateBlueprint = (name: string, questions, cardNames: Array<string>): B
         name,
         questions,
         cards,
+        unitOfWork,
     };
 };
 
 export const basicBlueprint = generateBlueprint(
     'Frontend App',
+    'feature',
     [
         {
             'content': 'Will you be using Docker?',
@@ -52,6 +54,7 @@ export const basicBlueprint = generateBlueprint(
 
 export const userRegisteredBlueprint = generateBlueprint(
     'My first blueprint',
+    'feature',
     [
         {
             'content': 'Will you run this in Amazon S3?',
