@@ -1,0 +1,44 @@
+{
+    "name": "Week planning",
+    "unitOfWork": "extra task",
+    "questions": [
+        {
+            "content": "Do you have any medical appointments this week?",
+            "cardToGenerate": {
+                "name": "Plan medical appointments"
+            }
+        },
+        {
+            "content": "Are you going to the cinema this week?",
+            "cardToGenerate": {
+                "name": "Plan visit to the cinema"
+            }
+        },
+        {
+            "content": "Are you going to read a book this week?",
+            "cardToGenerate": {
+                "name": "Plan reading time"
+            }
+        }
+    ],
+    "cards": [
+        {
+            "name": "Select weekly goals"
+        },
+        {
+            "name": "Plan schedule for the week"
+        },
+        {
+            "name": "Plan exercise sessions"
+        },
+        {
+            "name": "Plan buying groceries"
+        },
+        {
+            "name": "Plan cooking time"
+        },
+        {
+            "name": "Plan buffer time"
+        }
+    ]
+}
