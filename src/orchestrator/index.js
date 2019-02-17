@@ -17,8 +17,8 @@ const getCards = async (customBlueprintsFolder: ?string): Promise<Array<Card>> =
     padding();
     const userStoryCards = await solicitUserStories();
     return [
-        ...questionGeneratedCards,
         ...blueprint.cards,
+        ...questionGeneratedCards,
         ...userStoryCards,
     ];
 };
