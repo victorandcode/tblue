@@ -26,11 +26,11 @@ This project requires 2 environment variables set. Please add them to your .bash
 Log into trello and copy the developer key from https://trello.com/app-key. Use that value for this environment variable.
 
 ### APP_TOKEN
-Use your api key from last step and replace it into the next url https://trello.com/1/authorize?key=**API_KEY**&name=tblueScaffoldingForTrello&expiration=never&response_type=token&scope=read,write
+Use your api key from last step and replace **API_KEY** inside the next url https://trello.com/1/authorize?key=API_KEY&name=tblueScaffoldingForTrello&expiration=never&response_type=token&scope=read,write
 
 Now copy/paste the full url into your browser
 
-Grant access to the script so you get a token, only you know what this token is so only your local instance of `tblue` will use it.
+Grant access to the script so you get a token, <span style="color:red">only you know what this token is so only your local instance of `tblue` will use it.</span>
 
 Now place the token as the value for this environment variable.
 
@@ -38,11 +38,11 @@ Now place the token as the value for this environment variable.
 1. Choose a name for your board
 2. Choose which blueprint you want to use
 3. Start answering Y/n for each question in the blueprint
-4. Start adding features
-5. See your new board 👶
+4. Start adding specific "features" for your project
+5. Open your new board from the terminal 👶
 
 ## CLI options
-`-c` OR `--custom-blueprints-folder`: Allows passing a folder containing one or multiple blueprints (see Custom blueprints). Only the files immediately inside the folder that have a `.json` extension and have a valid template will be evaluated.
+`-c` OR `--custom-blueprints-folder`: Allows passing a folder containing one or multiple blueprints ([see Custom blueprints](#custom-blueprints)). Only the files immediately inside the folder that have a `.json` extension and have a valid template will be evaluated.
 
 ### Custom blueprints
 The custom blueprints you create must have the following format. **If they don't, they will not show up in the blueprints selection screen**.
