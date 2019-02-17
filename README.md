@@ -1,6 +1,5 @@
 <h1 align="center">
-  <br>
-  tblue 📘
+  <br>tblue 📘
   <br>
 </h1>
 
@@ -94,8 +93,8 @@ npm start
 npm test
 ```
 
-## Compatibilty
-Emojis don't show correctly in windows 💔
+## [Contributing](./CONTRIBUTING.md)
 
-## Contributing blueprints
-For the moment, if you'd like to contribute a blueprint please submit a PR to the `src\blueprints\` folder. I plan to extract the blueprint to either a cdn or other option.
+## Compatibilty
+Emojis don't show correctly in windows' cmd 💔
+
