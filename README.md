@@ -14,13 +14,7 @@
 ## 💡 Motivation
 If you use trello a lot, it's likely that you have common tasks based on past experience and also custom cards for a given project. Wouldn't it be nice to have some sort of blueprint or template we could use to bootstrap our boards? This project aims to solve this need.
 
-## 🏃 How to run
-```sh
-npm install -g tblue
-tblue
-```
-
-## 🔧 Setup
+## 🔧 Prerequisites
 This project requires 2 environment variables set. Please add them to your .bash_profile or wherever they are needed for your environment. Next you'll find which variables you need to set and what value you should use for each one.
 
 (You can optionally just run `tblue` and the cli will guide you 😉)
@@ -42,6 +36,12 @@ will use it.</span>
 ![Api Key](./app_token2.png)
 
 Now place the token as the value for this environment variable.
+
+## 🏃 How to run
+```sh
+npm install -g tblue
+tblue
+```
 
 ## 📜 Workflow
 1. Choose a name for your board
