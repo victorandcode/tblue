@@ -52,7 +52,7 @@
     "jest": "^24.8.0",
     "prettier": "1.15.3",
     "regenerator-runtime": "^0.13.1",
-    "webpack": "^4.29.1",
+    "webpack": "^4.32.2",
     "webpack-cli": "^3.2.3",
     "webpack-node-externals": "^1.7.2"
   },
