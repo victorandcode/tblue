@@ -8,7 +8,10 @@ import { begin } from '~/orchestrator';
 
 const parseArguments = () => {
     program
-        .option('-c, --custom-blueprints-folder [customBlueprintsFolder]', 'Custom blueprints folder')
+        .option(
+            '-c, --custom-blueprints-folder [customBlueprintsFolder]',
+            'Custom blueprints folder'
+        )
         .parse(process.argv);
     return program;
 };

@@ -53,6 +53,9 @@ export const getBlueprintList = (customBlueprintsPath: ?string) => {
     return blueprints.filter(matchesBlueprintFormat);
 };
 
+export const getBlueprintTitle = (blueprint: Blueprint) =>
+    `${blueprint.name} (${blueprint.cards.length} built-in cards, ${blueprint.questions.length} questions)`;
+
 export const solicitBlueprint = async (customBlueprintsFolder: ?string): Blueprint => {
     const blueprints = getBlueprintList(customBlueprintsFolder);
     logger.instructions(
@@ -62,7 +65,10 @@ export const solicitBlueprint = async (customBlueprintsFolder: ?string): Bluepri
             type: 'list',
             name: questionName,
             message: 'What blueprint would you like to use?',
-            choices: blueprints.map(q => q.name),
+            choices: blueprints.map(blueprint => ({
+                name: getBlueprintTitle(blueprint),
+                value: blueprint.name,
+            })),
             prefix: '📋',
         }]);
     return blueprints.find(q => q.name === answers[questionName]);

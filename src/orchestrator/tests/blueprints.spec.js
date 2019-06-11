@@ -1,5 +1,5 @@
 import * as blueprintTemplates from '~/blueprints';
-import { getBlueprintList } from '../blueprints';
+import { getBlueprintList, getBlueprintTitle } from '../blueprints';
 import { basicBlueprint, userRegisteredBlueprint } from './stubs';
 import fs from 'fs';
 
@@ -26,6 +26,13 @@ describe('getBlueprintList', () => {
     });
 });
 
+describe('getBlueprintTitle', () => {
+    it('includes card count and number of questions', () => {
+        const title = getBlueprintTitle(basicBlueprint);
+        expect(title).toMatch(`${basicBlueprint.cards.length} built-in cards`);
+        expect(title).toMatch(`${basicBlueprint.questions.length} questions`);
+    });
+});
 // describe('matchesBlueprintFormat', () => {
 //     it('returns true for valid blueprint', () => {
 //         expect(matchesBlueprintFormat(basicBlueprint)).toEqual(true);
