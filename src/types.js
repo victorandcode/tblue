@@ -1,15 +1,15 @@
 export type Card = {
-  name: string
+    name: string
 };
 
 export type Question = {
-  content: string,
-  cardToGenerate: Card
+    content: string,
+    cardToGenerate: Card
 };
 
 export type Blueprint = {
-  cards: Array<Card>,
-  name: string,
-  unitOfWork: string,
-  questions: Array<Question>
+    cards: Array<Card>,
+    name: string,
+    unitOfWork: string,
+    questions: Array<Question>
 };
