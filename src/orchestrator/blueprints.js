@@ -34,22 +34,28 @@ const fileToJson = (fileName: string, fileFolder: string): Object => {
     return JSON.parse(contentsRaw);
 };
 
-export const getBlueprintList = (customBlueprintsPath: ?string) => {
-    let blueprints = builtInBlueprints;
+const getCustomBlueprints = (customBlueprintsPath: string) => {
     try {
-        if(customBlueprintsPath) {
-            const files = fs.readdirSync(customBlueprintsPath);
-            const jsonFileNames = files.filter(file => file.endsWith('.json'));
-            const candidateCustomBlueprints = jsonFileNames.map(
-                // $FlowFixMe
-                jsonFileName => fileToJson(jsonFileName, customBlueprintsPath)
-            );
-            const customBlueprints = candidateCustomBlueprints;
-            blueprints = [...customBlueprints, ...blueprints];
-        }
+        const files = fs.readdirSync(customBlueprintsPath);
+        const jsonFileNames = files.filter(file => file.endsWith('.json'));
+        const candidateCustomBlueprints = jsonFileNames.map(
+            // $FlowFixMe
+            jsonFileName => fileToJson(jsonFileName, customBlueprintsPath)
+        );
+        const customBlueprints = candidateCustomBlueprints;
+        return customBlueprints;
     } catch (ex) {
         logger.warning('Not able to read custom blueprint folder');
     }
+    return [];
+};
+
+export const getBlueprintList = (customBlueprintsPath: ?string) => {
+    let blueprints = builtInBlueprints;
+    if(customBlueprintsPath) {
+        blueprints = [...getCustomBlueprints(customBlueprintsPath), ...blueprints];
+    }
+    //    blueprints = [...getHomeBlueprints(), ...blueprints];
     return blueprints.filter(matchesBlueprintFormat);
 };
 
