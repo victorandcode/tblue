@@ -81,6 +81,7 @@ The custom blueprints you create must have the following format. **If they don't
     "cards": [{"name": "Repository configuration"}]
 }
 ```
+**Note: If you want store your custom blueprints without having to pass alwas the `-c` flag. You can store them in the `~/.blueprints` folder**
 
 ## Running locally
 ```sh
