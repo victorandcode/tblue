@@ -10,10 +10,10 @@
 
 <h4 align="center">Trello blueprints, scaffolding for trello boards (a.k.a. yeoman for trello)</h4>
 
-![Demo](./demo.gif)
+![Demo](./docs/images/demo.gif)
 
 **Result**:
-![Sample generated board](./sample_generated_board.png)
+![Sample generated board](./docs/images/sample_generated_board.png)
 
 ## 💡 Motivation
 If you use trello a lot, it's likely that you have common tasks based on past experience and also custom cards for a given project. Wouldn't it be nice to have some sort of blueprint or template we could use to bootstrap our boards? This project aims to solve this need.
@@ -25,19 +25,19 @@ This project requires 2 environment variables set. Please add them to your .bash
 
 ### TRELLO_API_KEY
 Log into trello and copy the developer key from https://trello.com/app-key. Use that value for this environment variable.
-![Api Key](./api_key.png)
+![Api Key](./docs/images/api_key.png)
 
 ### APP_TOKEN
 Use your api key from last step and replace **API_KEY** inside the next url https://trello.com/1/authorize?key=API_KEY&name=tblueScaffoldingForTrello&expiration=never&response_type=token&scope=read,write
 
 Now copy/paste the full url into your browser
 
-![Api Key](./app_token.png)
+![Api Key](./docs/images/app_token.png)
 
 Grant access to the script so you get a token, <span style="color:red">only you know what this token is so only your local instance of `tblue` 
 will use it.</span>
 
-![Api Key](./app_token2.png)
+![Api Key](./docs/images/app_token2.png)
 
 Now place the token as the value for this environment variable.
 
