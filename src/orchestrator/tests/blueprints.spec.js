@@ -1,10 +1,9 @@
-import * as blueprintTemplates from '~/blueprints';
-import { getBlueprintList, getBlueprintTitle } from '../blueprints';
-import { basicBlueprint, userRegisteredBlueprint } from './stubs';
 import fs from 'fs';
+import * as blueprintTemplates from '~/blueprints';
+import { getBlueprintList, getBlueprintTitle, blueprintsHomeFolder , getBlueprintsFromFolder} from '../blueprints';
+import { basicBlueprint, userRegisteredBlueprint } from './stubs';
 
 jest.mock('fs');
-jest.mock('path');
 jest.mock('../../blueprints/index.js');
 
 describe('getBlueprintList', () => {
@@ -14,14 +13,24 @@ describe('getBlueprintList', () => {
         expect(getBlueprintList()).toEqual(blueprints);
     });
     describe('when customFolder is passed', () => {
-        it('returns builtInBlueprints and custom blueprints', () => {
+        it('returns blueprints', () => {
             const allBlueprints = [userRegisteredBlueprint, basicBlueprint];
             const customFolder = '/my-custom-folder/';
             const customBlueprintFileName = 'my-first-blueprint.json';
-            fs.readdirSync.mockImplementation(() => [customBlueprintFileName]);
-            fs.readFileSync.mockImplementation(() => JSON.stringify(userRegisteredBlueprint));
+            fs.readdirSync.mockImplementationOnce((folder) => {
+                if(folder === customFolder) {
+                    return [customBlueprintFileName];
+                }
+                return [];
+            });
+            fs.readFileSync.mockImplementationOnce(() => JSON.stringify(userRegisteredBlueprint));
             expect(getBlueprintList(customFolder)).toEqual(allBlueprints);
             expect(fs.readdirSync).toHaveBeenCalledWith(customFolder);
+        });
+    });
+    xdescribe(`when blueprints exist in ${blueprintsHomeFolder}`, () => {
+        it('returns blueprints', () => {
+
         });
     });
 });
@@ -31,6 +40,19 @@ describe('getBlueprintTitle', () => {
         const title = getBlueprintTitle(basicBlueprint);
         expect(title).toMatch(`${basicBlueprint.cards.length} built-in cards`);
         expect(title).toMatch(`${basicBlueprint.questions.length} questions`);
+    });
+});
+
+describe('getBlueprintsFromFolder', () => {
+    it('calls fs with folder', () => {
+        const customFolder = 'secretFiles';
+        getBlueprintsFromFolder(customFolder);
+        expect(fs.readdirSync).toHaveBeenCalledWith(customFolder);
+    });
+    xit('returns only files that match blueprint extension', () => {
+        fs.readdirSync.mockImplementationOnce(() => ['failing.json.js', 'failing.blueprint.js', 'success.blueprint.json']);
+        getBlueprintsFromFolder('');
+        expect(fs.readFileSync).toHaveBeenCalledWith('success.blueprint.json');
     });
 });
 // describe('matchesBlueprintFormat', () => {

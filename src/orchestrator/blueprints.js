@@ -1,6 +1,7 @@
 
 // @flow
 import inquirer from 'inquirer';
+import os from 'os';
 import fs from 'fs';
 import path from 'path';
 import * as yup from 'yup';
@@ -10,6 +11,8 @@ import { builtInBlueprints } from '~/blueprints';
 import type { Blueprint } from '~/types';
 
 const questionName = 'selectedBlueprint';
+export const blueprintsHomeFolder = path.join(os.homedir(), '.blueprints');
+export const blueprintExtension = '.json';
 
 const schema = yup.object().shape({
     name: yup.string().required(),
@@ -34,18 +37,16 @@ const fileToJson = (fileName: string, fileFolder: string): Object => {
     return JSON.parse(contentsRaw);
 };
 
-const getCustomBlueprints = (customBlueprintsPath: string) => {
+export const getBlueprintsFromFolder = (folder: string) => {
     try {
-        const files = fs.readdirSync(customBlueprintsPath);
-        const jsonFileNames = files.filter(file => file.endsWith('.json'));
-        const candidateCustomBlueprints = jsonFileNames.map(
+        const files = fs.readdirSync(folder);
+        const jsonFileNames = files.filter(file => file.endsWith(blueprintExtension));
+        return jsonFileNames.map<Object>(
             // $FlowFixMe
-            jsonFileName => fileToJson(jsonFileName, customBlueprintsPath)
+            jsonFileName => fileToJson(jsonFileName, folder)
         );
-        const customBlueprints = candidateCustomBlueprints;
-        return customBlueprints;
     } catch (ex) {
-        logger.warning('Not able to read custom blueprint folder');
+        logger.warning(`Not able to read blueprints from ${folder}`);
     }
     return [];
 };
@@ -53,9 +54,9 @@ const getCustomBlueprints = (customBlueprintsPath: string) => {
 export const getBlueprintList = (customBlueprintsPath: ?string) => {
     let blueprints = builtInBlueprints;
     if(customBlueprintsPath) {
-        blueprints = [...getCustomBlueprints(customBlueprintsPath), ...blueprints];
+        blueprints = [...getBlueprintsFromFolder(customBlueprintsPath), ...blueprints];
     }
-    //    blueprints = [...getHomeBlueprints(), ...blueprints];
+    blueprints = [...getBlueprintsFromFolder(blueprintsHomeFolder), ...blueprints];
     return blueprints.filter(matchesBlueprintFormat);
 };
 
