@@ -16,7 +16,7 @@ describe('getBlueprintList', () => {
         it('returns blueprints', () => {
             const allBlueprints = [userRegisteredBlueprint, basicBlueprint];
             const customFolder = '/my-custom-folder/';
-            const customBlueprintFileName = 'my-first-blueprint.json';
+            const customBlueprintFileName = 'my-first-blueprint.blueprint.json';
             fs.readdirSync.mockImplementationOnce((folder) => {
                 if(folder === customFolder) {
                     return [customBlueprintFileName];

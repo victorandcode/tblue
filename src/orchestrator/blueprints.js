@@ -12,7 +12,7 @@ import type { Blueprint } from '~/types';
 
 const questionName = 'selectedBlueprint';
 export const blueprintsHomeFolder = path.join(os.homedir(), '.blueprints');
-export const blueprintExtension = '.json';
+export const blueprintExtension = '.blueprint.json';
 
 const schema = yup.object().shape({
     name: yup.string().required(),

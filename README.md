@@ -55,7 +55,7 @@ tblue
 5. Open your new board from the terminal 👶
 
 ## CLI options
-`-c` OR `--custom-blueprints-folder`: Allows passing a folder containing one or multiple blueprints ([see Custom blueprints](#custom-blueprints)). Only the files immediately inside the folder that have a `.json` extension and have a valid template will be evaluated.
+`-c` OR `--custom-blueprints-folder`: Allows passing a folder containing one or multiple blueprints ([see Custom blueprints](#custom-blueprints)). Only the files immediately inside the folder that have a `.blueprint.json` extension and have a valid template will be evaluated.
 
 ### Custom blueprints
 The custom blueprints you create must have the following format. **If they don't, they will not show up in the blueprints selection screen**.
