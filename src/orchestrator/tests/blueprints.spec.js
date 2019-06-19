@@ -1,6 +1,8 @@
 import fs from 'fs';
 import * as blueprintTemplates from '~/blueprints';
-import { getBlueprintList, getBlueprintTitle, blueprintsHomeFolder , getBlueprintsFromFolder} from '../blueprints';
+import { getBlueprintList, blueprintsHomeFolder } from '../blueprints';
+import { getBlueprintTitle } from '../blueprints/prompt';
+import { getBlueprintsFromFolder} from '../blueprints/fromFolder';
 import { basicBlueprint, userRegisteredBlueprint } from './stubs';
 
 jest.mock('fs');
