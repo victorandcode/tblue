@@ -1,22 +1,19 @@
 import fs from 'fs';
-import * as blueprintTemplates from '~/blueprints';
 import { getBlueprintList, blueprintsHomeFolder } from '../blueprints';
+import samples from '../blueprints/samples';
 import { getBlueprintTitle } from '../blueprints/prompt';
 import { getBlueprintsFromFolder} from '../blueprints/fromFolder';
 import { basicBlueprint, userRegisteredBlueprint } from './stubs';
 
 jest.mock('fs');
-jest.mock('../../blueprints/index.js');
 
 describe('getBlueprintList', () => {
     it('returns builtInBlueprints', () => {
-        const blueprints = [basicBlueprint];
-        blueprintTemplates.builtInBlueprints = blueprints;
-        expect(getBlueprintList()).toEqual(blueprints);
+        expect(getBlueprintList()).toEqual(samples);
     });
     describe('when customFolder is passed', () => {
         it('returns blueprints', () => {
-            const allBlueprints = [userRegisteredBlueprint, basicBlueprint];
+            const allBlueprints = [userRegisteredBlueprint, ...samples];
             const customFolder = '/my-custom-folder/';
             const customBlueprintFileName = 'my-first-blueprint.blueprint.json';
             fs.readdirSync.mockImplementationOnce((folder) => {

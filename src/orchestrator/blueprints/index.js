@@ -4,7 +4,7 @@ import os from 'os';
 import path from 'path';
 
 import { getBlueprintsFromFolder } from './fromFolder';
-import { sampleBlueprints } from './samples';
+import sampleBlueprints from './samples';
 import { matchesBlueprintFormat } from './schema';
 import { solicitBlueprint } from './prompt';
 
