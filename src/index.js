@@ -1,10 +1,10 @@
 // @flow
 import program from 'commander';
 
+import welcome from '~/branding/welcome';
 import { validateEnvironment } from '~/common/env';
 import logger from '~/common/logger';
 import { begin } from '~/orchestrator';
-import { printAppInfo } from './branding';
 
 const parseArguments = () =>
     program
@@ -17,7 +17,7 @@ const parseArguments = () =>
 async function main() {
     try {
         parseArguments();
-        printAppInfo();
+        welcome();
         await validateEnvironment();
         await begin(program.customBlueprintsFolder);
     } catch (error) {
