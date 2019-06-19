@@ -4,7 +4,7 @@ import asciiLogo from 'asciiart-logo';
 import logger from '~/common/logger';
 import packageJson from '../../package.json';
 
-export const printAppInfo = () => {
+export const printAppInfo = () =>
     logger.base(
         asciiLogo({
             name: packageJson.name.toUpperCase(),
@@ -19,4 +19,3 @@ export const printAppInfo = () => {
             .wrap(packageJson.description)
             .render()
     );
-};

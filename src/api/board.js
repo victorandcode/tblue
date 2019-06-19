@@ -5,13 +5,12 @@ import type { Board, List } from './types';
 const createUrl = (queryParams: string) => `https://api.trello.com/1/boards/${queryParams}`;
 
 export const create = async (name: string): Board => {
-    const baseParams = {
+    const response = await doPost({
         name,
         defaultLabels: 'true',
         defaultLists: 'true',
         prefs_background: 'purple',
-    };
-    const response = await doPost(baseParams, createUrl);
+    }, createUrl);
     return response.data;
 };
 

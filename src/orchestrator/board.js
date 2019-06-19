@@ -4,27 +4,27 @@ import opn from 'opn';
 
 import type { Board } from '~/api/types';
 
-const questionName = 'boardName';
+const questionBoardName = 'boardName';
+const questionOpenBoardUrl = 'openBoardUrl';
 
 export const solicitBoardName = async (): Promise<string> => {
     const answers = await inquirer.prompt([{
-        name: questionName,
+        name: questionBoardName,
         message: 'Please enter the board name:',
         prefix: '📝',
         validate: (value) => !!value || 'The board name can\'t be empy',
     }]);
-    return answers[questionName];
+    return answers[questionBoardName];
 };
 
 export const solicitOpenBoardUrl = async (board: Board) => {
-    const questionName = 'openBoardUrl';
     const answer = await inquirer
         .prompt([{
             type: 'confirm',
-            name: questionName,
+            name: questionOpenBoardUrl,
             message: `Board url is ${board.url}, would you like to open it?`,
         }]);
-    if(answer[questionName]) {
+    if(answer[questionOpenBoardUrl]) {
         await opn(board.url);
     }
 };

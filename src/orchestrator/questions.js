@@ -3,7 +3,7 @@ import inquirer from 'inquirer';
 import type { Card, Blueprint } from '~/types';
 
 export const askQuestions = async (blueprint: Blueprint): Array<Card> => {
-    const questions = blueprint.questions;
+    const { questions } = blueprint;
     const promptQuestions = questions.map(
         question => ({
             type: 'confirm',
