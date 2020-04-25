@@ -4,7 +4,7 @@
     "tblue": "./dist/bundle.js"
   },
   "name": "tblue",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Trello blueprints, scaffolding for trello boards (a.k.a. yeoman for trello)",
   "url": "https://github.com/victor-cordova/tblue",
   "main": "dist/bundle.js",
